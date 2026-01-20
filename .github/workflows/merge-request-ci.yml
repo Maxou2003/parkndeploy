@@ -1,21 +1,20 @@
 on: [pull_request]
 
-
 jobs:
   frontend_test:
     runs-on: ubuntu-latest
     steps:
     - name: Build the app
       run: npm install && npm run build
-      working-directory: ./frontend  
+      working-directory: frontend  
     
     - name : Run the linting subscription
       run: npm run lint
-      working-directory: ./frontend
+      working-directory: frontend
 
   backend_test:
     runs-on: ubuntu-latest
     steps:
     - name: Build the dotnet app
       run : dotnet build
-      working-directory: ./backend 
+      working-directory: backend 
