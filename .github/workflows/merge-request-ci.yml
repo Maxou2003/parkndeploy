@@ -3,6 +3,7 @@ on: [pull_request]
 
 jobs:
   frontend_test:
+    steps:
     - name: Build the app
       run: npm install && npm run build
       working-directory: ./frontend  
@@ -12,6 +13,7 @@ jobs:
       working-directory: ./frontend
 
   backend_test:
+    steps:
     - name: Build the dotnet app
       run : dotnet build
       working-directory: ./backend 
