@@ -1,0 +1,17 @@
+on: [pull_request]
+
+
+jobs:
+  frontend_test:
+    - name: Build the app
+      run: npm install && npm run build
+      working-directory: ./frontend  
+    
+    - name : Run the linting subscription
+      run: npm run lint
+      working-directory: ./frontend
+
+  backend_test:
+    - name: Build the dotnet app
+      run : dotnet build
+      working-directory: ./backend 
