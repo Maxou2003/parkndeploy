@@ -29,6 +29,9 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '9.0.x'
+      
+    - name: Build le dotnet
+      run: dotnet build --configuration Release
         
     - name: Publish the app
       run: dotnet publish -c Release --property:PublishDir=publish # Publish the app to the API project publish folder
