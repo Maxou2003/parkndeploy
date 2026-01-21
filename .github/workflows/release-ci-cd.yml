@@ -40,7 +40,7 @@ jobs:
         git config --global user.name "github.actions[bot]"
         git add .
         git commit -m "package json version update"
-        git push origin HEAD
+        git push origin ${ GITHUB_REF}
 
     - name: Upload frontend artifacts
       uses: actions/upload-artifact@v4
