@@ -60,9 +60,8 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: backend-artifacts
-        path: |
-          backend/publish
-          !publish/**/*.md
+        path: backend/publish
+
 
   deploy_infrastructure:
     runs-on: ubuntu-latest
@@ -113,7 +112,6 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: frontend-artifacts 
-        path: ./frontend 
 
     - name: Login to Azure 
       uses: azure/login@v2
@@ -150,7 +148,6 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: backend-artifacts 
-        path: ./backend 
     
     - name: Login to Azure 
       uses: azure/login@v2
