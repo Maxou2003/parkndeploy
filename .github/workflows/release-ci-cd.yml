@@ -6,6 +6,7 @@ on:
  
 permissions:
   id-token: write
+  repository-project: write
 
 env: 
   AZURE_RG_NAME: rg-${{ vars.PROJECT_NAME }}-${{ vars.AZURE_RESOURCE_IDENTIFIER }}
@@ -35,8 +36,8 @@ jobs:
 
     - name: Save package.json version
       run: |
-        git config --global user.email github.actions[bot]
-        git config --global user.name 41898282+github.actions[bot]@users.noreply.github.com
+        git config --global user.email "41898282+github.actions[bot]@users.noreply.github.com" 
+        git config --global user.name "github.actions[bot]"
         git add .
         git commit -m "package json version update"
         git push origin HEAD
