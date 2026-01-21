@@ -61,7 +61,7 @@ jobs:
       with:
         name: backend-artifacts
         path: |
-          ./backend/publish
+          backend/publish
           !publish/**/*.md
 
   deploy_infrastructure:
