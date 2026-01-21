@@ -19,6 +19,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Update package json version
+      run: npm version patch
+      working-directory: ./frontend
+
     - name: Build the app
       run: npm install && npm run build
       working-directory: ./frontend  
