@@ -24,9 +24,6 @@ jobs:
         TAG=$(git describe --tags --abbrev=0)
         cd ./frontend
         npm version $TAG
-        git add .
-        git commit -m "package json version update"
-        git push 
 
     - name: Build the app
       run: npm install && npm run build
@@ -35,6 +32,12 @@ jobs:
     - name : Run the linting subscription
       run: npm run lint
       working-directory: ./frontend
+
+    - name: Save package.json version
+      run: |
+        git add .
+        git commit -m "package json version update"
+        git push 
 
     - name: Upload frontend artifacts
       uses: actions/upload-artifact@v4
