@@ -31,9 +31,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: frontend-artifacts
-        path: |
-          ./frontend/dist
-          !dist/**/*.md
+        path: ./frontend/dist
 
   backend_ci:
     runs-on: ubuntu-latest
@@ -149,7 +147,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: backend-artifacts 
-        path: ./backend
+        path: ./backend/ParkNDeploy.Api/publish
     
     - name: Login to Azure 
       uses: azure/login@v2
