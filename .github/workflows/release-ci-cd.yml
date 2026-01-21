@@ -22,6 +22,7 @@ jobs:
     - name: Update package.json version
       run: |
         TAG=$(git describe --tags --abbrev=0)
+        cd ./frontend
         npm version $TAG
         git add .
         git commit -m "package json version update"
