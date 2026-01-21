@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Update package json version
-      run: npm version patch
+      run: npm version from-git
       working-directory: ./frontend
 
     - name: Build the app
