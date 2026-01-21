@@ -19,6 +19,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Update package.json version
+      run: |
+        TAG=$(git describe --tags --abbrev=0)
+        npm version $TAG
+        git add .
+        git commit -m "package json version update"
+        git push 
+
     - name: Build the app
       run: npm install && npm run build
       working-directory: ./frontend  
