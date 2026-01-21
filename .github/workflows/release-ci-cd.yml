@@ -6,7 +6,7 @@ on:
  
 permissions:
   id-token: write
-  repository-project: write
+  contents: write
 
 env: 
   AZURE_RG_NAME: rg-${{ vars.PROJECT_NAME }}-${{ vars.AZURE_RESOURCE_IDENTIFIER }}
